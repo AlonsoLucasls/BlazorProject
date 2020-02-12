@@ -1,0 +1,35 @@
+﻿@page "/Calculation"
+
+<div class="uk-margin">
+    <div class="uk-inline uk-width-1-1">
+        <input class="uk-input uk-form-large uk-width-1-1" placeholder="Valor 1" @bind="valor1" />
+        <input class="uk-input uk-form-large uk-width-1-1" placeholder="Valor 2" @bind="valor2" />
+    </div>
+</div>
+<div class="uk-margin">
+    <button class="uk-button" @onclick="Somar">Somar</button>
+</div>
+
+<div class="uk-margin">
+    <input class="uk-input uk-form-large uk-width-1-1" placeholder="Resultado" @bind="resultado" readonly />
+</div>
+<div class="uk-margin">
+    <NavLink class="nav-link" href="/" Match="NavLinkMatch.Prefix">
+        <span class="oi oi-plus" aria-hidden="true"></span> Voltar
+    </NavLink>
+</div>
+
+@code {
+
+    public string resultado = string.Empty;
+    public int valor1;
+    public int valor2;
+
+    void Somar()
+    {
+        var result = valor1 + valor2;
+
+        resultado = "O Resultado da Soma é " + result;
+    }
+
+}
